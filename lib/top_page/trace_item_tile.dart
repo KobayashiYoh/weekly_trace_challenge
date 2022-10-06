@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:weekly_trace_challenge/top_page/trace.dart';
 
 class TraceItemTile extends StatelessWidget {
-  final String title;
-  final String date;
-  const TraceItemTile({
-    Key? key,
-    required this.title,
-    required this.date,
-  }) : super(key: key);
+  final Trace trace;
+  const TraceItemTile({Key? key, required this.trace}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +15,20 @@ class TraceItemTile extends StatelessWidget {
       ),
       child: ListTile(
         title: Text(
-          title,
+          trace.title,
           style: const TextStyle(
             fontSize: 18.0,
             fontWeight: FontWeight.bold,
           ),
         ),
-        subtitle: Text(date),
-        onTap: () {},
+        subtitle: Text(trace.date),
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (_) => trace.page,
+            ),
+          );
+        },
       ),
     );
   }
