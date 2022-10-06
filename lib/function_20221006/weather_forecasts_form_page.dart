@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -13,7 +15,6 @@ class _WeatherForecastsFormPageState extends State<WeatherForecastsFormPage> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController _controller = TextEditingController();
   final String message = '地域ID（6ケタの数字）を入力してください。';
-  final String pattern = r'^[0-9]{6}$';
 
   void _clearText() {
     setState(() {
@@ -26,9 +27,11 @@ class _WeatherForecastsFormPageState extends State<WeatherForecastsFormPage> {
         'https://weather.tsukumijima.net/api/forecast?city=${_controller.text}');
     final response = await http.get(url);
     if (response.statusCode == 200) {
-      print(response.body);
+      final String results =
+          const Utf8Decoder(allowMalformed: true).convert(response.bodyBytes);
+      print(results);
     } else {
-      print('Request failed with status: ${response.statusCode}.');
+      throw Exception('Request failed with status: ${response.statusCode}.');
     }
   }
 
@@ -52,13 +55,17 @@ class _WeatherForecastsFormPageState extends State<WeatherForecastsFormPage> {
               children: [
                 const Expanded(
                   child: Center(
-                    child: Text('結果を表示'),
+                    child: Text(
+                      '各拠点の地域ID\n東京: 130010\n長野: 200020\n岡山: 330010\n広島: 340010\n',
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
                 Text(message),
                 TextFormField(
                   controller: _controller,
                   validator: (value) {
+                    const String pattern = r'^[0-9]{6}$';
                     if (!RegExp(pattern).hasMatch(value!)) {
                       return message;
                     }
