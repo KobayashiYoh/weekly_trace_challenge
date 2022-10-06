@@ -1,7 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'package:weekly_trace_challenge/function_20221006/weather_forecast_repository.dart';
 
 class WeatherForecastsFormPage extends StatefulWidget {
   const WeatherForecastsFormPage({Key? key}) : super(key: key);
@@ -22,22 +20,9 @@ class _WeatherForecastsFormPageState extends State<WeatherForecastsFormPage> {
     });
   }
 
-  Future<void> fetchWeather() async {
-    final url = Uri.parse(
-        'https://weather.tsukumijima.net/api/forecast?city=${_controller.text}');
-    final response = await http.get(url);
-    if (response.statusCode == 200) {
-      final String results =
-          const Utf8Decoder(allowMalformed: true).convert(response.bodyBytes);
-      print(results);
-    } else {
-      throw Exception('Request failed with status: ${response.statusCode}.');
-    }
-  }
-
   void submit() {
     if (_formKey.currentState!.validate()) {
-      fetchWeather();
+      WeatherForecastRepository.fetchWeather(_controller.text);
     }
   }
 
