@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weekly_trace_challenge/top_page/item_list_view.dart';
+import 'package:weekly_trace_challenge/top_page/trace_item_list_view.dart';
 
 class TopPage extends StatelessWidget {
   const TopPage({Key? key}) : super(key: key);
@@ -25,7 +25,7 @@ class TopPage extends StatelessWidget {
         body: TabBarView(
           children: <Widget>[
             for (int i = 0; i < _titleTexts.length; i++)
-              ItemListView(
+              TraceItemListView(
                 index: i,
               ),
           ],
