@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
 
-class WeatherForecastsFormPage extends StatelessWidget {
+class WeatherForecastsFormPage extends StatefulWidget {
   const WeatherForecastsFormPage({Key? key}) : super(key: key);
+
+  @override
+  State<WeatherForecastsFormPage> createState() =>
+      _WeatherForecastsFormPageState();
+}
+
+class _WeatherForecastsFormPageState extends State<WeatherForecastsFormPage> {
+  TextEditingController _controller = TextEditingController();
+
+  void _clearText() {
+    setState(() {
+      _controller = TextEditingController();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +32,14 @@ class WeatherForecastsFormPage extends StatelessWidget {
                 ),
               ),
               const Text('地域ID（6ケタの数字）を入力してください。'),
-              TextFormField(),
+              TextFormField(
+                controller: _controller,
+              ),
               Row(
                 children: [
                   Expanded(
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: _clearText,
                       child: const Text('クリア'),
                     ),
                   ),
