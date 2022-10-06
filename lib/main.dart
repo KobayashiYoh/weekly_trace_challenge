@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weekly_trace_challenge/top_page/top_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(),
+      home: const TopPage(),
     );
   }
 }
