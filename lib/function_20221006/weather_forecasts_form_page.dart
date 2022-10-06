@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class WeatherForecastsFormPage extends StatefulWidget {
   const WeatherForecastsFormPage({Key? key}) : super(key: key);
@@ -20,11 +21,20 @@ class _WeatherForecastsFormPageState extends State<WeatherForecastsFormPage> {
     });
   }
 
+  Future<void> fetchWeather() async {
+    final url = Uri.parse(
+        'https://weather.tsukumijima.net/api/forecast?city=${_controller.text}');
+    final response = await http.get(url);
+    if (response.statusCode == 200) {
+      print(response.body);
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
+  }
+
   void submit() {
     if (_formKey.currentState!.validate()) {
-      print('success');
-    } else {
-      print('faild');
+      fetchWeather();
     }
   }
 
