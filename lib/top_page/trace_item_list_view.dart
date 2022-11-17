@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weekly_trace_challenge/function_20221006/weather_forecasts_form_page.dart';
+import 'package:weekly_trace_challenge/function_20221117/rock_paper_scissors_page.dart';
 import 'package:weekly_trace_challenge/top_page/trace.dart';
 import 'package:weekly_trace_challenge/top_page/trace_item_tile.dart';
 
@@ -32,9 +33,9 @@ class TraceItemListView extends StatelessWidget {
       page: WeatherForecastsFormPage(),
     ),
     Trace(
-      title: '○○',
-      date: '2000/01/01',
-      page: Scaffold(),
+      title: 'じゃんけんアプリ',
+      date: '2022/11/17',
+      page: RockPaperScissorsPage(),
     ),
     Trace(
       title: '○○',
