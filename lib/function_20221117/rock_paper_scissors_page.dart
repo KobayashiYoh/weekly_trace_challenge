@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 enum HandSelect {
@@ -30,8 +32,21 @@ class _RockPaperScissorsPageState extends State<RockPaperScissorsPage> {
     }
   }
 
+  HandSelect _generateCPUHandSelect() {
+    final random = math.Random();
+    final randomNumber = random.nextInt(2);
+    switch (randomNumber) {
+      case 0:
+        return HandSelect.rock;
+      case 1:
+        return HandSelect.paper;
+      default:
+        return HandSelect.scissors;
+    }
+  }
+
   void _onTapHandSelectButton(HandSelect playerHandSelect) {
-    HandSelect cpuHandSelect = HandSelect.rock;
+    HandSelect cpuHandSelect = _generateCPUHandSelect();
     setState(() {
       _displayCPUText = _handSelectText(cpuHandSelect);
     });
