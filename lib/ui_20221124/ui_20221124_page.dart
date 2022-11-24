@@ -47,12 +47,15 @@ class UI20221124Page extends StatelessWidget {
                       Icons.close,
                     ),
                   ),
-                  const Expanded(
-                    child: LinearProgressIndicator(
-                      backgroundColor: Color(0xFFCCCCCC),
-                      color: Colors.lightGreen,
-                      value: 0.9,
-                      minHeight: 16.0,
+                  Expanded(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16.0),
+                      child: const LinearProgressIndicator(
+                        backgroundColor: Color(0xFFCCCCCC),
+                        color: Colors.lightGreen,
+                        value: 0.9,
+                        minHeight: 16.0,
+                      ),
                     ),
                   ),
                   const SizedBox(width: 16.0),
