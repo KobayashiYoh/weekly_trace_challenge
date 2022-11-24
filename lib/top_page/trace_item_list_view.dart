@@ -3,6 +3,7 @@ import 'package:weekly_trace_challenge/function_20221006/weather_forecasts_form_
 import 'package:weekly_trace_challenge/function_20221117/rock_paper_scissors_page.dart';
 import 'package:weekly_trace_challenge/top_page/trace.dart';
 import 'package:weekly_trace_challenge/top_page/trace_item_tile.dart';
+import 'package:weekly_trace_challenge/ui_20221124/ui_20221124_page.dart';
 
 class TraceItemListView extends StatelessWidget {
   final int index;
@@ -12,7 +13,7 @@ class TraceItemListView extends StatelessWidget {
     Trace(
       title: 'UIトレース',
       date: '2022/11/24',
-      page: Scaffold(),
+      page: UI20221124Page(),
     ),
     Trace(
       title: '○○',
