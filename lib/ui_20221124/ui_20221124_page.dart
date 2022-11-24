@@ -22,7 +22,7 @@ class UI20221124Page extends StatelessWidget {
           ),
           Text(
             text,
-            style: TextStyle(fontSize: 18.0),
+            style: const TextStyle(fontSize: 18.0),
           ),
         ],
       ),
@@ -77,9 +77,23 @@ class UI20221124Page extends StatelessWidget {
                   ],
                 ),
               ),
-              TextButton(
-                onPressed: () {},
-                child: Text('CHECK'),
+              SizedBox(
+                width: double.infinity,
+                height: 48.0,
+                child: TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    backgroundColor: const Color(0xFFDDDDDD),
+                    primary: Colors.black26,
+                  ),
+                  child: const Text(
+                    'CHECK',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
