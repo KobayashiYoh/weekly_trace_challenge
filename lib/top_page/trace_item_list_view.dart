@@ -10,8 +10,8 @@ class TraceItemListView extends StatelessWidget {
 
   static const List<Trace> _uiTraces = [
     Trace(
-      title: '○○',
-      date: '2000/01/01',
+      title: 'UIトレース',
+      date: '2022/11/24',
       page: Scaffold(),
     ),
     Trace(
