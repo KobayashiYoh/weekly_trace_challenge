@@ -41,29 +41,63 @@ class UI20221124Page extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {},
+                    iconSize: 48.0,
+                    color: const Color(0xFFBBBBBB),
                     icon: const Icon(
                       Icons.close,
                     ),
                   ),
                   const Expanded(
                     child: LinearProgressIndicator(
-                      value: 0.1,
+                      backgroundColor: Color(0xFFCCCCCC),
+                      color: Colors.lightGreen,
+                      value: 0.9,
+                      minHeight: 16.0,
                     ),
                   ),
-                  const Icon(Icons.favorite),
-                  const Text('5'),
+                  const SizedBox(width: 16.0),
+                  const Icon(
+                    Icons.favorite,
+                    color: Colors.pink,
+                    size: 32.0,
+                  ),
+                  const Text(
+                    '5',
+                    style: TextStyle(
+                      color: Colors.pink,
+                      fontSize: 18.0,
+                    ),
+                  ),
                 ],
               ),
+              const SizedBox(height: 8.0),
               Row(
                 children: const [
-                  Icon(Icons.circle),
-                  Text('NEW WORD'),
+                  Icon(
+                    Icons.circle,
+                    color: Colors.purpleAccent,
+                  ),
+                  SizedBox(width: 4.0),
+                  Text(
+                    'NEW WORD',
+                    style: TextStyle(
+                      color: Colors.purpleAccent,
+                    ),
+                  ),
                 ],
               ),
+              const SizedBox(height: 16.0),
               Container(
                 alignment: Alignment.centerLeft,
-                child: const Text('coffee?'),
+                child: const Text(
+                  'Which of these is "coffee"?',
+                  style: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
+              const SizedBox(height: 16.0),
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,
