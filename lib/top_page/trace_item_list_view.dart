@@ -4,6 +4,7 @@ import 'package:weekly_trace_challenge/function_20221117/rock_paper_scissors_pag
 import 'package:weekly_trace_challenge/top_page/trace.dart';
 import 'package:weekly_trace_challenge/top_page/trace_item_tile.dart';
 import 'package:weekly_trace_challenge/ui_20221124/ui_20221124_page.dart';
+import 'package:weekly_trace_challenge/ui_20230126/ui_20230126.dart';
 
 class TraceItemListView extends StatelessWidget {
   final int index;
@@ -16,9 +17,9 @@ class TraceItemListView extends StatelessWidget {
       page: UI20221124Page(),
     ),
     Trace(
-      title: '○○',
-      date: '2000/01/01',
-      page: Scaffold(),
+      title: 'UIトレース',
+      date: '2023/01/26',
+      page: UI20230126(),
     ),
     Trace(
       title: '○○',
