@@ -17,7 +17,7 @@ class TraceItemListView extends StatelessWidget {
       page: UI20221124Page(),
     ),
     Trace(
-      title: 'UIトレース',
+      title: '設定画面',
       date: '2023/01/26',
       page: UI20230126(),
     ),
