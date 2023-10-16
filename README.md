@@ -1,3 +1,3 @@
 # PlayGroundモバイルコース 定例会用リポジトリ
-隔週でUIトレースと機能トレースを行う。<br>
-決められたお題に対して制限時間内（40分ぐらい）に実装を進めていく。
+こちらに移行しました。
+https://github.com/shinonome-inc/mobile_teirei
